@@ -1,5 +1,6 @@
 import BookDetails from './BookDetails';
 import '../styles/bookList.css';
+import FormAddBook from './FormAddBook';
 
 function BookList() {
   const books = [
@@ -29,11 +30,16 @@ function BookList() {
     },
   ];
   return (
-    <div className="book-container">
-      {books.map((book) => (
-        <BookDetails key={book.id} book={book} />
-      ))}
-    </div>
+    <>
+      <div className="book-container">
+        {books.map((book) => (
+          <BookDetails key={book.id} book={book} />
+        ))}
+      </div>
+      <div className="form-container">
+        <FormAddBook />
+      </div>
+    </>
   );
 }
 
