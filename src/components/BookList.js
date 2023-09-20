@@ -1,42 +1,26 @@
+import { useSelector } from 'react-redux';
 import BookDetails from './BookDetails';
 import '../styles/bookList.css';
 import FormAddBook from './FormAddBook';
 
 function BookList() {
-  const books = [
-    {
-      id: 1,
-      title: 'The Lord of the Rings',
-      author: 'J.R.R. Tolkien',
-      category: 'Adventure',
-      chapter: 4,
-      percentage: 38,
-    },
-    {
-      id: 2,
-      title: 'War and Peace',
-      author: 'Leo Tolstoy',
-      category: 'Historical novel',
-      chapter: 9,
-      percentage: 45,
-    },
-    {
-      id: 3,
-      title: 'Game of Thrones',
-      author: 'George R. R. Martin',
-      category: 'High Fantasy',
-      chapter: 8,
-      percentage: 85,
-    },
-  ];
+  const { books } = useSelector((state) => state.books);
   return (
     <>
       <div className="book-container">
         {books.map((book) => (
-          <BookDetails key={book.id} book={book} />
+          <BookDetails
+            id={book.id}
+            key={book.id}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+            chapter={book.chapter}
+            percentage={book.percentage}
+          />
         ))}
       </div>
-      <div className="form-container">
+      <div className="book-container">
         <FormAddBook />
       </div>
     </>
