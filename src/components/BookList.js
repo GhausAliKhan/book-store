@@ -15,8 +15,8 @@ function BookList() {
   }, [dispatch]);
 
   return (
-    <>
-      <div className="book-container">
+    <main>
+      <section className="book-container">
         {Object.entries(books).map(([id, bookArray]) => {
           const book = bookArray[0];
           idRef.current = id;
@@ -33,11 +33,10 @@ function BookList() {
             />
           );
         })}
-      </div>
-      <div className="book-container">
-        <FormAddBook />
-      </div>
-    </>
+      </section>
+      <span className="form-separator" />
+      <FormAddBook />
+    </main>
   );
 }
 
