@@ -14,7 +14,7 @@ function Navbar() {
             <NavLink className="list-text" exact to="/">Home</NavLink>
           </li>
           <li className="list-item">
-            <NavLink className="list-text" to="/categories">Categories</NavLink>
+            <NavLink className="list-text opacity" to="/categories">Categories</NavLink>
           </li>
         </ul>
       </nav>

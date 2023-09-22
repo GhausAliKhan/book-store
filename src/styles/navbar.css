@@ -57,6 +57,10 @@ li {
   color: #121212;
 }
 
+.opacity{
+  opacity: 0.5;
+}
+
 .react-icons {
   display: flex;
   width: 1.7rem;
